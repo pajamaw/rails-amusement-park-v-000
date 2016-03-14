@@ -1,0 +1,13 @@
+<h2>Log in</h2>
+
+<%= form_for @user, url: "/users/login" do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.collection_select(:id, @users, :id, :name) %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Sign In" %>
+  </div>
+<% end %>

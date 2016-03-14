@@ -1,0 +1,39 @@
+<h2>Sign up</h2>
+
+<%= form_for @user do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name%>
+  </div>
+
+    <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :happiness %><br />
+    <%= f.number_field :happiness, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :nausea %><br />
+    <%= f.number_field :nausea, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :tickets %><br />
+    <%= f.number_field :tickets, autofocus: true %>
+  </div>
+
+      <div class="field">
+    <%= f.label :admin %><br />
+    <%= f.check_box :admin, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create User" %>
+  </div>
+<% end %>
+<%params.inspect%>

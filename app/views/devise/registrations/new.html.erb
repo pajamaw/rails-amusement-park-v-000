@@ -1,0 +1,37 @@
+<h2>Sign up</h2>
+
+<%= form_for @user do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name%>
+  </div>
+
+    <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :happiness %><br />
+    <%= f.text_field :happiness, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :nausea %><br />
+    <%= f.text_field :nausea, autofocus: true %>
+  </div>
+
+    <div class="field">
+    <%= f.label :tickets %><br />
+    <%= f.text_field :tickets, autofocus: true %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Create User" %>
+  </div>
+<% end %>
+<%params.inspect%>
+<%= render "devise/shared/links" %>

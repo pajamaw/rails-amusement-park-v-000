@@ -1,0 +1,12 @@
+<h2>Log in</h2>
+
+<%= form_tag signin_path do  %>
+
+    <div class="field">
+      <%= select_tag 'user[id]', options_from_collection_for_select(@users,"id", "name"), id: "user[id]" %>
+    </div>
+
+  <div class="actions">
+    <%= submit_tag "Sign In" %>
+  </div>
+<% end %>

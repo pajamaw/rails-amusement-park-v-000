@@ -1,0 +1,27 @@
+    <% if @user.admin? == true %>
+      <h2><%="ADMIN"%></h2>
+      <%end%>  
+
+  <div class="field">
+    Name: <%= @user.name%>
+  </div>
+  <br />
+    <div class="field">
+   Height: <%= @user.height %>
+  </div>
+  <br />
+
+    <div class="field">
+    <p>Mood: <%= @user.mood %></p>
+  </div>
+  <br />
+
+    <div class="field">
+    <p>Tickets: <%= @user.tickets %></p>
+  </div>
+  <br />
+
+  <div class="actions">
+    <%= link_to "Edit", edit_user_path %>
+  </div>
+  <%=link_to "See attractions", attractions_path%>

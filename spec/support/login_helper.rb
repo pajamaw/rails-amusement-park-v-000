@@ -1,4 +1,4 @@
-module LoginHelper
+module LoginHelper 
 
   def user_signup
     visit '/'
