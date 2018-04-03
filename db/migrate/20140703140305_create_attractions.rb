@@ -11,7 +11,7 @@ class CreateAttractions < ActiveRecord::Migration
      #has a happiness_rating field
      t.integer :happiness_rating
      #has a ticket_number field
-     t.integer :ticket_number
+     t.integer :tickets
      t.timestamps null: false
     end
   end
