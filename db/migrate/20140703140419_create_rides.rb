@@ -1,7 +1,7 @@
 class CreateRides < ActiveRecord::Migration
   # Write your migrations here
   def change
-    create_table :attractions do |t|
+    create_table :rides do |t|
       #has a user_id field
       t.integer :user_id
       #has a attraction_id field

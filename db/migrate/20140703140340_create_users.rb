@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   # Write your migrations here
   def change
-    create_table :attractions do |t|
+    create_table :users do |t|
       #has a name field
       t.string :name
       #has a password field
