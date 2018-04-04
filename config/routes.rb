@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :user, only: [:new, :create]
-  root 'user#home'
+  resources :users, only: [:new, :create]
+  root 'welcome#home'
 
 #/signin
 
