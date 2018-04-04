@@ -69,6 +69,7 @@ RSpec.describe Ride, :type => :model do
     ride = Ride.create(:user_id => user.id, :attraction_id => attraction.id)
     ride.take_ride
     mindy = User.find_by(:name => "Mindy")
+    #binding.pry
     expect(mindy.tickets).to eq(5)
   end
 

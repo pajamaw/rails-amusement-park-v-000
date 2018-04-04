@@ -28,15 +28,18 @@ class Ride < ActiveRecord::Base
     elsif !height_requirement
       "Sorry. You are not tall enough to ride the #{attraction.name}."
     else
-update user attributes
+    #update user attributes
     # it "has a method 'take_ride' that updates ticket number" do
-    user_tickets = user.tickets - attraction.tickets
+    total_tickets = user.tickets - attraction.tickets
+    user.update(tickets: total_tickets)
+
     # it "has a method 'take_ride' that updates the user's nausea" do
-    #user.nausea == 5
-    user_nausea = user.nausea
+    total_nausea = user.nausea + attraction.nausea_rating
+    user.update(nausea: total_nausea)
+
     # it "has a method 'take_ride' that updates the user's happiness" do
-    #user.happiness == 3
-    user_happiness = user.happiness
+    total_happiness = user.happiness + attraction.happiness_rating
+    user.update(happiness: total_happiness)
     end
   end
 end
