@@ -79,6 +79,7 @@ RSpec.describe User, :type => :model do
 
   it "has a method 'mood' that returns 'happy' when the user is more happy than nauseous" do
     user.update(:happiness => 7)
+    #binding.pry
     expect(user.mood).to eq("happy")
   end
 

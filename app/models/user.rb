@@ -7,11 +7,15 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :password, presence: true
 
-  def mood
-    #it "has a method 'mood' that returns 'sad' when the user is more nauseous than happy" do
+    def mood
     #it "has a method 'mood' that returns 'happy' when the user is more happy than nauseous" do
+    if self.happiness > self.nausea
+      "happy"
+    #it "has a method 'mood' that returns 'sad' when the user is more nauseous than happy" do
+    elsif self.happiness < self.nausea
+      "sad"
+    end
   end
-
   #it "is not valid without a password" do
   #it "is valid with an admin boolean" do
   #it "defaults to admin => false" do
