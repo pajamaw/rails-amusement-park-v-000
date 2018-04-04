@@ -29,24 +29,14 @@ class Ride < ActiveRecord::Base
       "Sorry. You are not tall enough to ride the #{attraction.name}."
     else
 update user attributes
-
-    end
-
-    #it "has a method 'take_ride' that updates ticket number" do
-
-    #it "has a method 'take_ride' that updates the user's nausea" do
-    #user.nausea == 5
-
-    #it "has a method 'take_ride' that updates the user's happiness" do
-    #user.happiness == 3
-    #end
-  end
-end
     # it "has a method 'take_ride' that updates ticket number" do
     user_tickets = user.tickets - attraction.tickets
     # it "has a method 'take_ride' that updates the user's nausea" do
+    #user.nausea == 5
     user_nausea = user.nausea
     # it "has a method 'take_ride' that updates the user's happiness" do
+    #user.happiness == 3
     user_happiness = user.happiness
     end
   end
+end
