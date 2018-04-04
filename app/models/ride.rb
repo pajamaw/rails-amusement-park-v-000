@@ -16,21 +16,19 @@ class Ride < ActiveRecord::Base
   end
 
   def take_ride
-    #it "has a method 'take_ride' that accounts for the user not having enough tickets" do
-    #user.tickets < attraction.tickets
-    #self.user.tickets.count < attraction.tickets
-
-
+    # it "has a method 'take_ride' that accounts for the user not being tall enough and
+    # not having enough tickets" do
     if !enough_tickets && !height_requirement
       "Sorry. You do not have enough tickets to ride the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
-
+    # it "has a method 'take_ride' that accounts for the user not having enough tickets"
     elsif !enough_tickets
       "Sorry. You do not have enough tickets to ride the #{attraction.name}."
 
-    #it "has a method 'take_ride' that accounts for the user not being tall enough" do
+    # it "has a method 'take_ride' that accounts for the user not being tall enough" do
     elsif !height_requirement
       "Sorry. You are not tall enough to ride the #{attraction.name}."
-
+    else
+update user attributes
 
     end
 
@@ -44,3 +42,11 @@ class Ride < ActiveRecord::Base
     #end
   end
 end
+    # it "has a method 'take_ride' that updates ticket number" do
+    user_tickets = user.tickets - attraction.tickets
+    # it "has a method 'take_ride' that updates the user's nausea" do
+    user_nausea = user.nausea
+    # it "has a method 'take_ride' that updates the user's happiness" do
+    user_happiness = user.happiness
+    end
+  end
