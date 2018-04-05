@@ -26,6 +26,6 @@ class UsersController < ApplicationController
   end
 
   def visit_signin
-    redirect_to "/users/edit"
+    redirect_to "/users/show"
   end
 end

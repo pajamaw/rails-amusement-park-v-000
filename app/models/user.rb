@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :rides #it "has many rides" do
   has_many :attractions, through: :rides #it "has many attractions through rides" do
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  devise :omniauthable
   #it "is valid with a name, password, happiness, nausea, height, and tickets" do
   validates :name, presence: true
   validates :password, presence: true
