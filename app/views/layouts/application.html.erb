@@ -24,9 +24,11 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
            <!--  nav here -->
-           <li><a href="/users/new">Sign Up</a></li>
-           <li><a href="users/show">Sign In</a></li>
-          </ul>
+           <!--%= link_to "Sign Up", new_user_path %-->
+           <!--%= link_to "Sign Up", new_user_path(@user) %-->
+           <!--%= link_to "Sign In", user_path %-->
+           <!--%= link_to "Sign In", "/users/:id" %-->
+           <p><!--%= link_to "Log out", destroy_user_session_path, method: :delete %></p-->
         </div><!--/.nav-collapse -->
       </div>
     </div>

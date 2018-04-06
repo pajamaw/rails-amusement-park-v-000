@@ -57,6 +57,6 @@ end
 
 gem "bootstrap-sass", "~> 3.1.1"
 gem "thin"
-gem "devise"
-gem "devise_invitable"
-gem "omniauth"
+#gem "devise"
+#gem "devise_invitable"
+#gem "omniauth"
