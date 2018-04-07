@@ -22,8 +22,8 @@
   <!--%= f.collection_check_boxes :admin_ids, Users.all, :id, :admin %>
   <p>Check box if you are a theme park owner</p-->
 
-  <p><%= label_tag(:admin, "Check box if you are a theme park owner") %>
-  <%= check_box_tag(:admin) %></p>
+  <p><%= f.label(:admin, "Check box if you are a theme park owner") %>
+  <%= f.check_box(:admin) %></p>
 
   <p><%= f.submit %></p>
 <% end %>

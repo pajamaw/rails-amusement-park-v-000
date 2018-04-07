@@ -4,5 +4,9 @@
   <p><%= f.label :password %>:</p>
   <p><%= f.text_field :password %></p>
 
+  <!--hidden_field(:admin, :admin_signin)-->
+  <p><%= label_tag(:admin, "Check box if you are a theme park owner") %>
+  <%= check_box_tag(:admin) %></p>
+
   <p><%= f.submit 'Sign In'%></p>
 <% end %>

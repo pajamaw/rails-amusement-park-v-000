@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :tickets
       #has a height field
       t.integer :height
+      #it "defaults to admin => false" do
       t.boolean :admin, default: false
       t.timestamps null: false
     end

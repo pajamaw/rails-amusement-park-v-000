@@ -103,6 +103,7 @@ describe 'Feature Test: User Signout', :type => :feature do
     visit_signup
     user_signup
     click_link("Log Out")
+    #binding.pry
     expect(page.get_rack_session).to_not include("user_id")
   end
 

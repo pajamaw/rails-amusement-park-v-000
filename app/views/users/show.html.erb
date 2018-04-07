@@ -6,9 +6,12 @@
 
 <div class="field">
   Toggle navigation Home
-  <p><label for=":name">Select your name</label></p>
-  <p><select id="user_id" name="user[id]"></p>
 </div>
 
+<%= link_to "Sign In", signin_path %>
 
-<%= link_to "Sign In", user_path %>
+<% if @user.admin %>
+  <%= "ADMIN" %>
+<% end %>
+
+<%= link_to "Log Out", root_path %>
