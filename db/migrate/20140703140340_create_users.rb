@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       #has a name field
       t.string :name
       #has a password field
-      t.string :password
+      t.string :password_digest
       #has a nausea field
       t.integer :nausea
       #has a happiness field

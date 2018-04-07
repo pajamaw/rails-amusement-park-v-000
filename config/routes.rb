@@ -1,19 +1,10 @@
 Rails.application.routes.draw do
   resources :users
-  resources :rides
-  resources :attractions
+
+  get '/signup', to: 'sessions#signup'
+  get '/signin', to: 'sessions#signin', as: 'signin'
+  post '/signin', to: 'sessions#create'
   root 'welcome#home'
-
-
-
 #/signin
 
-#attraction/show page
-
-#/attractions
-#/attractions/new
-#{}/attractions/:id
-#attractions/index
-#attractions/show
-#/attractions/1/edit
 end

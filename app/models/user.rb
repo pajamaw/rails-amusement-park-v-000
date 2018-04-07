@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_secure_password
   # write associations here
   has_many :rides #it "has many rides" do
   has_many :attractions, through: :rides #it "has many attractions through rides" do

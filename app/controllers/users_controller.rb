@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user, only: [:show]
   def home
   end
 
@@ -11,31 +11,22 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      session[:user_name] = @user.name
       # UsersController create logs you in
         redirect_to user_path(@user)
     else
-      render '/'
+      render 'new'
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
+    if !current_user.admin
+      if current_user != @user
+      redirect_to root_path
+      end
+    end
   end
 
-  def visit_signup
-    new_user_path
-    #link_to "Sign Up", new_user_path
-    #<%= link_to "Sign Up", new_user_path %>
-    redirect_to "/users/new"
-    #redirect_to "Sign Up", new_user_path
-
-  end
-
-  def visit_signin
-    user_path
-    redirect_to "/users/show"
-  end
   private
 
   def user_params
