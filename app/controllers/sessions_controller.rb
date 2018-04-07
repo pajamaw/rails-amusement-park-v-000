@@ -15,18 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    #:user_id.delete
-    #session[:user_id].delete
-    #session.delete[:user_id].delete
-    #@user.id.delete
-    #reset session
-    #session.delete :user_id
-    #@user.destroy
-    #Session.find(params[:id]).destroy
-    #Session.find(params[:user_id]).destroy
-    #session[:user_id].destroy
-    #session.destroy
-    
+    session.destroy
     redirect_to '/'
   end
 end
