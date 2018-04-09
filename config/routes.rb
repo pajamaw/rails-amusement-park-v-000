@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :attractions, only: [:index, :show, :update]
+  resources :attractions, only: [:index, :show, :update, :new]
 
   get '/signup', to: 'sessions#signup'
   get '/signin', to: 'sessions#signin', as: 'signin'
