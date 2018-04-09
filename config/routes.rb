@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   resources :users
-  resources :attractions, only: [:index, :show, :update, :new]
+  resources :attractions
 
   get '/signup', to: 'sessions#signup'
   get '/signin', to: 'sessions#signin', as: 'signin'
   post '/signin', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/rides/new', to: 'rides#new'
-  post '/attractions' to: 'attractions#new'
+
   root 'welcome#home'
 end
