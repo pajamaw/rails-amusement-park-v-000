@@ -17,8 +17,8 @@ class AttractionsController < ApplicationController
   end
 
   def show
-     @ride = Ride.new
-    #@attraction = Attraction.find_by(id: params[:id]) expected: "/attractions/2" got: "/attraction"
+    #@ride = self.new
+    @attraction = Attraction.find_by(id: params[:id]) #expected: "/attractions/2" got: "/attraction"
     #@attraction = Attraction.find(params[:id]) expected: "/attractions/2" got: "/attraction"
   end
 

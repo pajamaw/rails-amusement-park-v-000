@@ -30,16 +30,24 @@ class Ride < ActiveRecord::Base
     else
     #update user attributes
     # it "has a method 'take_ride' that updates ticket number" do
-    total_tickets = user.tickets - attraction.tickets
-    user.update(tickets: total_tickets)
+    #total_tickets = user.tickets - attraction.tickets
+    #user.update(tickets: total_tickets)
 
     # it "has a method 'take_ride' that updates the user's nausea" do
-    total_nausea = user.nausea + attraction.nausea_rating
-    user.update(nausea: total_nausea)
+    #total_nausea = user.nausea + attraction.nausea_rating
+    #user.update(nausea: total_nausea)
 
     # it "has a method 'take_ride' that updates the user's happiness" do
-    total_happiness = user.happiness + attraction.happiness_rating
-    user.update(happiness: total_happiness)
+    #total_happiness = user.happiness + attraction.happiness_rating
+    #user.update(happiness: total_happiness)
+
+    user.update(
+    :happiness => (user.happiness + attraction.happiness_rating),
+    :nausea => (user.nausea + attraction.nausea_rating),
+    :tickets => (user.tickets - attraction.tickets)
+    )
+
+    "Thanks for riding the #{attraction.name}!"
     end
   end
 end

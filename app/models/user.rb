@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
 
   #it "is valid with a name, password, happiness, nausea, height, and tickets" do
   validates :name, presence: true
-  validates :password, presence: true #it "is not valid without a password" do
+  #validates :password, presence: true #it "is not valid without a password" do
 
 
-    def mood
+  def mood
     #it "has a method 'mood' that returns 'happy' when the user is more happy than nauseous" do
     if self.happiness && self.nausea
       if self.happiness > self.nausea
@@ -23,5 +23,4 @@ class User < ActiveRecord::Base
   #it "is not valid without a password" do
   #it "is valid with an admin boolean" do
   #it "defaults to admin => false" do
-
 end
