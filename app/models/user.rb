@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   #it "is valid with a name, password, happiness, nausea, height, and tickets" do
   validates :name, presence: true
   #validates :password, presence: true #it "is not valid without a password" do
+  #THIS CAUSED AUTHENTICATION ERRROR!!!
 
 
   def mood

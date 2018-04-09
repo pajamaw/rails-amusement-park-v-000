@@ -20,9 +20,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    if params[:message]
+      @message = params[:message] #Displays message
+    else
+      @message = "" #If no message prevents Error
+    end
     #if !current_user.admin
       if current_user != @user
       redirect_to root_path
+
+
       end
     #end
   end
