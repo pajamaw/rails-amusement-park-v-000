@@ -1,6 +1,6 @@
 New Attraction
 
-<%= form_for @attraction do |f| %>
+<%= form_for @attraction, url: "/attractions" do |f| %>
   <p><%= f.label :name %>:</p>
   <p><%= f.text_field :name %></p>
 
@@ -15,7 +15,6 @@ New Attraction
 
   <p><%= f.label :tickets %>:</p>
   <p><%= f.text_field :tickets %></p>
-<% end %>
 
-  <%= submit_tag "Create Attraction" %>
-<% attraction.name %>
+  <%= f.submit "Create Attraction" %>
+  <% end %>
