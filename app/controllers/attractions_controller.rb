@@ -22,6 +22,19 @@ class AttractionsController < ApplicationController
     #@attraction = Attraction.find(params[:id]) expected: "/attractions/2" got: "/attraction"
   end
 
+  def edit
+    @attraction = Attraction.find(params[:id])
+  end
+
+  def update
+  @attraction = Attraction.find(params[:id])
+    if @attraction.update_attributes(permitted_attributes(@attraction))
+      redirect_to @attraction
+    else
+      render :edit
+    end
+  end
+
   private
 
   def attraction_params

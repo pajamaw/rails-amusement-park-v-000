@@ -1,7 +1,10 @@
 <%= form_tag({controller: "rides", action: "new" }) do %>
-<%= hidden_field_tag(:user_id, current_user.id) %>
-<%= hidden_field_tag(:attraction_id, @attraction.id) %>
-<%= submit_tag "Go on this ride" %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= hidden_field_tag(:attraction_id, @attraction.id) %>
+  <% if current_user.admin? %>
+    <div "Edit_Attraction_link"><%= link_to "Edit Attraction", edit_attraction_path %></div>
+  <% end %>
+  <%= submit_tag "Go on this ride" %>
 <% end %>
-Tickets: <%= @attraction.tickets %>
-Name: <%= @attraction.name %>
+<div "field">Tickets: <%= @attraction.tickets %></div>
+<div "field">Name: <%= @attraction.name %></div>
