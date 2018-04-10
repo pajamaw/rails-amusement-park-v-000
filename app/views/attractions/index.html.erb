@@ -1,6 +1,10 @@
 <% @attractions.each do |attraction| %>
-  <%= attraction.name %>
-  <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %> <!-- use |attraction|-->
+  <div "attraction>"<%= attraction.name %></div>
+  <% if current_user.admin? %>
+    <div "attraction_link"><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></div>
+  <% else %>
+    <div "attraction_link"><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></div> <!-- use |attraction|-->
+  <%end %>
 <% end %>
 
-<%= link_to "New Attraction", new_attraction_path %>
+<div "New_Attraction_link"><%= link_to "New Attraction", new_attraction_path %></div>
