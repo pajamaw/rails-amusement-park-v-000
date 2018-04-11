@@ -27,7 +27,6 @@ class AttractionsController < ApplicationController
   end
 
   def update
-  binding.pry
   @attraction = @attraction.update(attraction_params)
     if @attraction.update(@attraction)
       redirect_to attraction_path(@attraction)
