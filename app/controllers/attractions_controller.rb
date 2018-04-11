@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+  before_action :set_attraction, only: [:show, :edit, :update]
   def new
     @attraction = Attraction.new
   end
@@ -17,27 +18,32 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    #@ride = self.new
-    @attraction = Attraction.find_by(id: params[:id]) #expected: "/attractions/2" got: "/attraction"
+    #@attraction = Attraction.find_by(id: params[:id]) #expected: "/attractions/2" got: "/attraction"
     #@attraction = Attraction.find(params[:id]) expected: "/attractions/2" got: "/attraction"
   end
 
   def edit
-    @attraction = Attraction.find(params[:id])
+    #@attraction = Attraction.find(params[:id])
   end
 
   def update
-  @attraction = @attraction.update(attraction_params)
-    if @attraction.update(@attraction)
-      redirect_to attraction_path(@attraction)
-    else
-      render :edit
-    end
+    #@attraction = Attraction.find(params[:id])
+      if @attraction.update(attraction_params)
+        redirect_to attraction_path(@attraction)
+      else
+        render :edit
+      end
   end
+
 
   private
 
   def attraction_params
     params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :tickets)
   end
+
+  def set_attraction
+   @attraction = Attraction.find(params[:id])
+  end
+
 end
