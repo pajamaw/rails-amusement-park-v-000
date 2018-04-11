@@ -1,8 +1,7 @@
-<%= form_for @attraction, url: "/attractions" do |f| %>
+<%= form_for @attraction, url: "/attractions", :method => :post do |f| %>
+
   <p><%= f.label :name %>:</p>
   <p><%= f.text_field :name %></p>
 
-
-
-  <%= f.submit "Update Attraction"%>
+  <%= f.submit "Update Attraction" %>
 <% end %>
