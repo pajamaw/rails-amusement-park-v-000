@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :attractions
-
+  
   get '/signup', to: 'sessions#signup'
   get '/signin', to: 'sessions#signin', as: 'signin'
   post '/signin', to: 'sessions#create'
